@@ -4,6 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidationService } from '../shared/validation.service';
 import { Hero } from '../shared/hero';
 
+
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'reactive-driven-form',
   templateUrl: './reactiveForm.component.html'
@@ -13,7 +19,6 @@ export class ReactiveFormComponent implements OnInit {
   model: Hero; 
   submittedModel: Hero; 
   submitted: boolean = false;
-  
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -33,7 +38,12 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit({ value, valid }: { value: Hero, valid: boolean }) {
-    this.submitted = true;
-    this.submittedModel = value;
+    console.log(Hero);
+    var myObj = { "lastName":"John", "firstName":"me", "address1":"no" }; 
+    console.log(myObj);
+    //this.submitted = true;
+    //this.submittedModel = value;
+    //return this.http.post("http://localhost:3000/api/addresses", myObj);  
   }
+
 }
