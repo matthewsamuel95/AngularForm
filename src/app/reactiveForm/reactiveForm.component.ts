@@ -12,21 +12,23 @@ export class ReactiveFormComponent implements OnInit {
   heroForm: FormGroup;
   model: Hero; 
   submittedModel: Hero; 
-  gender: string[];
   submitted: boolean = false;
   
   constructor(private formBuilder: FormBuilder) { }
-  
+
   ngOnInit() {
-      this.model = new Hero('Matt', 'Male', 'Sam', 'mat@email.com');
-      
-      this.gender = ['Male', 'Female'];                     
+      this.model = new Hero('Smith', 'Jane', '98 Somewhere Street','','Fairbanks',
+      'AK','95973','jane@foobar.com');
                      
       this.heroForm = this.formBuilder.group({
-        name:     [this.model.name, Validators.required],
-        lastname: [this.model.lastname, Validators.required],
-        email:    [this.model.email, [Validators.required, ValidationService.emailValidator]],
-        gender:    [this.model.gender, Validators.required]
+        lastName:     [this.model.lastName, Validators.required],
+        firstName: [this.model.firstName, Validators.required],
+        address1: [this.model.address1, Validators.required],
+        address2: [this.model.address2],
+        city: [this.model.city, Validators.required],
+        state: [this.model.state, Validators.required],
+        zipCode: [this.model.zipCode, Validators.required],
+        email: [this.model.email, [Validators.required, ValidationService.emailValidator]]
       });
   }
 

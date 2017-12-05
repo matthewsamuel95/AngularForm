@@ -1,11 +1,14 @@
 export class Hero {
 
   constructor(
-    public name?: string,
-    public gender?: string,
-    public lastname?: string,
-    public email?: string,
-    public password?: string) {
+    public lastName?: string,
+    public firstName?: string,
+    public address1?: string,
+    public address2?: string,
+    public city?: string,
+    public state?: string,
+    public zipCode?: string,
+    public email?: string
+    ) {
   }
-
 }

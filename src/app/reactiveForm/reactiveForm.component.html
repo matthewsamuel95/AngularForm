@@ -1,35 +1,53 @@
 <div class="container">
     <div *ngIf="!submitted">
-        <h1>Form</h1>
-        <form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
+<!--         <h1>Form</h1>
+ -->        <form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" formControlName="name" />
-                <div class="alert alert-danger" [hidden]="heroForm.controls.name.valid">Name is required</div>
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName" />
+                <div class="alert alert-danger" [hidden]="heroForm.controls.lastName.valid">Last Name is required</div>
             </div>
             <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" class="form-control" formControlName="lastname" />
-                <div class="alert alert-danger" [hidden]="heroForm.controls.lastname.valid">Last Name is required</div>
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" formControlName="firstName" />
+                <div class="alert alert-danger" [hidden]="heroForm.controls.firstName.valid">First Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="address1">Address 1</label>
+                <input type="address1" class="form-control" formControlName="address1" />
+                <div class="alert alert-danger" [hidden]="heroForm.controls.address1.valid">Address 1 is required</div>
+            </div>
+            <div class="form-group">
+                <label for="address2">Address 2</label>
+                <input type="address2" class="form-control" formControlName="address2" />
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="city" class="form-control" formControlName="city" />
+                <div class="alert alert-danger" [hidden]="heroForm.controls.city.valid">City is required</div>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="state" class="form-control" formControlName="state" />
+                <div class="alert alert-danger" [hidden]="heroForm.controls.state.valid">State is required</div>
+            </div>
+             <div class="form-group">
+                <label for="zipCode">Zip Code</label>
+                <input type="zipCode" class="form-control" formControlName="zipCode" />
+                <div class="alert alert-danger" [hidden]="heroForm.controls.zipCode.valid">Zip Code is required</div>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" formControlName="email" />
                 <div class="alert alert-danger" [hidden]="heroForm.controls.email.valid">Email is required and must be a valid email pattern</div>
             </div>
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select class="form-control" formControlName="gender">
-                  <option *ngFor="let p of gender" [value]="p">{{p}}</option>
-                </select>
-                <div class="alert alert-danger" [hidden]="heroForm.controls.gender.valid">gender is required</div>
-            </div>
+            
             <button type="submit" class="btn btn-default" [disabled]="!heroForm.valid">Submit</button> 
         </form>  
     </div>
                                 
     <div *ngIf="submitted">
-        <h2>You submitted the following:</h2>
+        <!-- <h2>You submitted the following:</h2>
         <div class="row">
             <div class="col-md-2">Name</div>
             <div class="col-md-10 pull-left">{{ submittedModel.name }}</div>
@@ -42,11 +60,8 @@
             <div class="col-md-2">Email</div>
             <div class="col-md-10 pull-left">{{ submittedModel.email }}</div>
         </div>
-        <div class="row">
-            <div class="col-md-2">Gender</div>
-            <div class="col-md-10 pull-left">{{ submittedModel.gender }}</div>
-        </div>
-        <br />
+        <br /> -->
+        Congrats
         <button class="btn btn-default" (click)="submitted=false">Edit</button>
     </div>    
 </div>
